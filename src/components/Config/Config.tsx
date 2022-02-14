@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { AppPluginMeta, PluginConfigPageProps } from '@grafana/data';
 import { BackendSrv, getBackendSrv, getLocationSrv } from '@grafana/runtime';
-import { Button } from '@grafana/ui';
+import { Button, InlineFieldRow } from '@grafana/ui';
 import { ApplicationName, ApplicationRoot } from '../../constants';
 import { GlobalSettings } from '../../types';
 
@@ -102,12 +102,14 @@ export class Config extends PureComponent<Props, State> {
       <>
         <h2>{ApplicationName}</h2>
         <p>The Abc Application, is a plugin for Grafana that...</p>
+
         {!isEnabled && (
           <p>
             Click below to <b>Enable</b> the Application.
           </p>
         )}
-        <div className="gf-form gf-form-button-row">
+
+        <InlineFieldRow>
           {isEnabled ? (
             <Button variant="destructive" onClick={this.onDisable}>
               Disable
@@ -115,7 +117,7 @@ export class Config extends PureComponent<Props, State> {
           ) : (
             <Button onClick={this.onEnable}>Enable</Button>
           )}
-        </div>
+        </InlineFieldRow>
       </>
     );
   }
