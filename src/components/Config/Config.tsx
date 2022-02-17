@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { AppPluginMeta, PluginConfigPageProps } from '@grafana/data';
-import { BackendSrv, getBackendSrv, getLocationSrv } from '@grafana/runtime';
+import { BackendSrv, getBackendSrv } from '@grafana/runtime';
 import { Button, InlineFieldRow } from '@grafana/ui';
 import { ApplicationName, ApplicationRoot } from '../../constants';
 import { GlobalSettings } from '../../types';
@@ -21,13 +21,6 @@ interface State {
  * Config component
  */
 export class Config extends PureComponent<Props, State> {
-  /**
-   * Object to get the current page
-   */
-  static getLocation(): Location {
-    return window.location;
-  }
-
   /**
    * Service to communicate via http(s) to a remote backend such as the Grafana backend, a datasource etc.
    */
@@ -56,16 +49,6 @@ export class Config extends PureComponent<Props, State> {
   }
 
   /**
-   * Home
-   */
-  goHome = (): void => {
-    getLocationSrv().update({
-      path: ApplicationRoot,
-      partial: false,
-    });
-  };
-
-  /**
    * Plugin Settings
    *
    * @param settings Plugin Settings
@@ -79,7 +62,7 @@ export class Config extends PureComponent<Props, State> {
    */
   onDisable = () => {
     this.updatePluginSettings({ enabled: false, jsonData: {}, pinned: false }).then(() => {
-      Config.getLocation().reload();
+      window.location.reload();
     });
   };
 
@@ -88,7 +71,7 @@ export class Config extends PureComponent<Props, State> {
    */
   onEnable = () => {
     this.updatePluginSettings({ enabled: true, jsonData: {}, pinned: true }).then(() => {
-      Config.getLocation().assign(ApplicationRoot);
+      window.location.assign(ApplicationRoot);
     });
   };
 
