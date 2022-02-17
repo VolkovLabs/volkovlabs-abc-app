@@ -1,7 +1,5 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { setLocationSrv } from '@grafana/runtime';
-import { ApplicationRoot } from '../../constants';
 import { Config } from './Config';
 
 /*
@@ -19,13 +17,6 @@ const getPlugin = (overridePlugin: any = { meta: {} }) => ({
  Config
  */
 describe('Config', () => {
-  beforeAll(() => {
-    jest.spyOn(Config, 'getLocation').mockImplementation((): any => ({
-      assign: jest.fn(),
-      reload: jest.fn(),
-    }));
-  });
-
   /*
    Initialization
    */
@@ -122,20 +113,6 @@ describe('Config', () => {
       const settings = { enabled: true, jsonData: {}, pinned: true };
       wrapper.instance().updatePluginSettings(settings);
       expect(postRequestMock).toHaveBeenCalledWith(`api/plugins/${plugin.meta.id}/settings`, settings);
-    });
-
-    it('goHome should redirect on home page', () => {
-      const updateLocationMock = jest.fn();
-      setLocationSrv({
-        update: updateLocationMock,
-      });
-      const plugin = getPlugin({ meta: { enabled: true } });
-      const wrapper = shallow<Config>(<Config plugin={plugin} query={null as any} />);
-      wrapper.instance().goHome();
-      expect(updateLocationMock).toHaveBeenCalledWith({
-        path: ApplicationRoot,
-        partial: false,
-      });
     });
   });
 
