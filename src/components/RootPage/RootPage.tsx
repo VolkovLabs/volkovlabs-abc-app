@@ -26,11 +26,17 @@ interface State {
  */
 export class RootPage extends PureComponent<Props, State> {
   /**
-   * Default state
+   * Constructor
+   *
+   * @param props {Props} Properties
    */
-  state: State = {
-    loading: true,
-  };
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      loading: true,
+    };
+  }
 
   /**
    * Mount
