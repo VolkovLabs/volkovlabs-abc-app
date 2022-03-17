@@ -4,7 +4,8 @@
 
 ### Features / Enhancements
 
-- Rebuild using 8.4.3
+- Rebuild using 8.4.3 (#7)
+- Remove Enable/Disable Config buttons, update README
 
 ## 1.2.0 (2022-02-17)
 

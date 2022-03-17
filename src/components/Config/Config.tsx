@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { AppPluginMeta, PluginConfigPageProps } from '@grafana/data';
 import { BackendSrv, getBackendSrv } from '@grafana/runtime';
-import { Button, InlineFieldRow } from '@grafana/ui';
-import { ApplicationName, ApplicationRoot } from '../../constants';
+import { FieldSet } from '@grafana/ui';
+import { ApplicationName } from '../../constants';
 import { GlobalSettings } from '../../types';
 
 /**
@@ -58,50 +58,14 @@ export class Config extends PureComponent<Props, State> {
   };
 
   /**
-   * Plugin disable
-   */
-  onDisable = () => {
-    this.updatePluginSettings({ enabled: false, jsonData: {}, pinned: false }).then(() => {
-      window.location.reload();
-    });
-  };
-
-  /**
-   * Plugin enable
-   */
-  onEnable = () => {
-    this.updatePluginSettings({ enabled: true, jsonData: {}, pinned: true }).then(() => {
-      window.location.assign(ApplicationRoot);
-    });
-  };
-
-  /**
    * Page Render
    */
   render() {
-    const { isEnabled } = this.state;
-
     return (
-      <>
+      <FieldSet>
         <h2>{ApplicationName}</h2>
         <p>The Abc Application, is a plugin for Grafana that...</p>
-
-        {!isEnabled && (
-          <p>
-            Click below to <b>Enable</b> the Application.
-          </p>
-        )}
-
-        <InlineFieldRow>
-          {isEnabled ? (
-            <Button variant="destructive" onClick={this.onDisable}>
-              Disable
-            </Button>
-          ) : (
-            <Button onClick={this.onEnable}>Enable</Button>
-          )}
-        </InlineFieldRow>
-      </>
+      </FieldSet>
     );
   }
 }
