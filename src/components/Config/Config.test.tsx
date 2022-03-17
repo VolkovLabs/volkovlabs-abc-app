@@ -18,29 +18,6 @@ const getPlugin = (overridePlugin: any = { meta: {} }) => ({
  */
 describe('Config', () => {
   /*
-   Initialization
-   */
-  describe('Initialization', () => {
-    it('If plugin is not enabled and meta is not set, state should have isEnabled = false', () => {
-      const plugin = getPlugin({});
-      const wrapper = shallow<Config>(<Config plugin={plugin} query={null as any} />);
-      expect(wrapper.state().isEnabled).toBeTruthy();
-    });
-
-    it('If plugin is not enabled, state should have isEnabled = false', () => {
-      const plugin = getPlugin({ meta: { enabled: false } });
-      const wrapper = shallow<Config>(<Config plugin={plugin} query={null as any} />);
-      expect(wrapper.state().isEnabled).toBeFalsy();
-    });
-
-    it('If plugin is enabled, state should have isEnabled = true', () => {
-      const plugin = getPlugin({ meta: { enabled: true } });
-      const wrapper = shallow<Config>(<Config plugin={plugin} query={null as any} />);
-      expect(wrapper.state().isEnabled).toBeTruthy();
-    });
-  });
-
-  /*
    Methods
    */
   describe('Methods', () => {

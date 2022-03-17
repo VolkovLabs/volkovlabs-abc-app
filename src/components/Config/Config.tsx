@@ -13,9 +13,7 @@ interface Props extends PluginConfigPageProps<AppPluginMeta<GlobalSettings>> {}
 /**
  * State
  */
-interface State {
-  isEnabled: boolean;
-}
+interface State {}
 
 /**
  * Config component
@@ -25,28 +23,6 @@ export class Config extends PureComponent<Props, State> {
    * Service to communicate via http(s) to a remote backend such as the Grafana backend, a datasource etc.
    */
   private backendSrv: BackendSrv = getBackendSrv();
-
-  /**
-   * Constructor
-   *
-   * @param props {Props} Properties
-   */
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      isEnabled: false,
-    };
-  }
-
-  /**
-   * Mount
-   */
-  componentDidMount(): void {
-    this.setState(() => ({
-      isEnabled: this.props.plugin.meta?.enabled ? true : false,
-    }));
-  }
 
   /**
    * Plugin Settings
