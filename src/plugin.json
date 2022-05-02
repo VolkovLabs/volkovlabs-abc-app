@@ -1,21 +1,21 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "dependencies": {
-    "grafanaDependency": ">=8.0.0",
+    "grafanaDependency": ">=8.3.0",
     "plugins": []
   },
   "id": "volkovlabs-abc-app",
   "info": {
     "author": {
       "name": "Volkov Labs",
-      "url": "https://volkovlabs.com"
+      "url": "https://volkovlabs.io"
     },
     "description": "Template to create a new Grafana application plugin",
     "keywords": ["template"],
     "links": [
       {
         "name": "Website",
-        "url": "https://volkovlabs.com"
+        "url": "https://volkovlabs.io"
       }
     ],
     "logos": {
