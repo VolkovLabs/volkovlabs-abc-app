@@ -1,11 +1,11 @@
 # Change Log
 
-## 1.3.0 (IN PROGRESS)
+## 1.3.0 (2022-05-01)
 
 ### Features / Enhancements
 
 - Rebuild using 8.4.3 (#7)
-- Remove Enable/Disable Config buttons, update README
+- Remove Enable/Disable Config buttons, update README (#8)
 
 ## 1.2.0 (2022-02-17)
 
