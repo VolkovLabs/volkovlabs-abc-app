@@ -1,5 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
+import { setImmediate } from 'timers';
 import { AppPluginMeta, PluginType } from '@grafana/data';
 import { Alert } from '@grafana/ui';
 import { ApplicationName, ApplicationSubTitle } from '../../constants';
@@ -100,6 +101,7 @@ describe('RootPage', () => {
         <RootPage basename="" meta={meta} path={path} query={null as any} onNavChanged={onNavChangedMock} />
       );
       wrapper.instance().componentDidMount();
+
       setImmediate(() => {
         const loadingMessageComponent = wrapper.findWhere(
           (node) => node.is(Alert) && node.prop('title') === 'Loading...'
