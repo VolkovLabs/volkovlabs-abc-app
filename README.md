@@ -1,7 +1,7 @@
 # Template to create a new Grafana application plugin
 
-[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange?style=for-the-badge)](https://www.grafana.com)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-abc-app.svg?logo=lgtm&logoWidth=18&style=for-the-badge&)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-abc-app/context:javascript)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9-orange)](https://www.grafana.com)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-abc-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-abc-app/context:javascript)
 ![CI](https://github.com/volkovlabs/volkovlabs-abc-app/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-app)
 
@@ -11,7 +11,7 @@ The ABC Application is a template to create a new application plugin for Grafana
 
 ### Requirements
 
-Grafana 8.3 is required.
+Grafana 9 is required.
 
 ## Getting Started
 

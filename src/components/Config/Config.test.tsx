@@ -28,6 +28,7 @@ describe('Config', () => {
       wrapper.instance()['backendSrv'] = {
         post: postRequestMock,
       } as any;
+
       const settings = { enabled: true, jsonData: {}, pinned: true };
       wrapper.instance().updatePluginSettings(settings);
       expect(postRequestMock).toHaveBeenCalledWith(`api/plugins/${plugin.meta.id}/settings`, settings);
