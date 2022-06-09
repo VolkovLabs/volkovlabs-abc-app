@@ -6,6 +6,7 @@
 
 - Rebuild using 9.0.0-beta3 (#9)
 - Update Requirements to Grafana 8.5.0 (#12)
+- Add NGINX container to proxy Grafana (#10)
 
 ## 1.3.0 (2022-05-01)
 
