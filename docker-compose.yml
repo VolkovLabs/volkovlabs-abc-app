@@ -19,3 +19,15 @@ services:
       - ./provisioning:/etc/grafana/provisioning
       # Uncomment to preserve Grafana configuration
       # - ./data:/var/lib/grafana
+
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    restart: always
+    environment:
+      - GRAFANA_HOST=host.docker.internal
+    ports:
+      - 80:80/tcp
+      - 443:443/tcp
+    depends_on:
+      - grafana
