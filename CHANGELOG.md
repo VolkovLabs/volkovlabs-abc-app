@@ -5,7 +5,7 @@
 ### Features / Enhancements
 
 - Rebuild using 9.0.0-beta3 (#9)
-- Update Requirements to Grafana 8.5.0
+- Update Requirements to Grafana 8.5.0 (#12)
 
 ## 1.3.0 (2022-05-01)
 
