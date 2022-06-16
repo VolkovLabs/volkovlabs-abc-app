@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { AppRootProps, NavModelItem } from '@grafana/data';
 import { Alert } from '@grafana/ui';
-import { ApplicationName, ApplicationSubTitle } from '../../constants';
+import { Application } from '../../constants';
 import { GlobalSettings } from '../../types';
 
 /**
@@ -74,9 +74,9 @@ export class RootPage extends PureComponent<Props, State> {
      * Header
      */
     const node = {
-      text: ApplicationName,
+      text: Application.name,
       img: meta.info.logos.large,
-      subTitle: ApplicationSubTitle,
+      subTitle: Application.subTitle,
       url: path,
       children: tabs,
     };

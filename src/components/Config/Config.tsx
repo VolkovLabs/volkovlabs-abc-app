@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { AppPluginMeta, PluginConfigPageProps } from '@grafana/data';
 import { BackendSrv, getBackendSrv } from '@grafana/runtime';
 import { FieldSet } from '@grafana/ui';
-import { ApplicationName } from '../../constants';
+import { Application } from '../../constants';
 import { GlobalSettings } from '../../types';
 
 /**
@@ -39,7 +39,7 @@ export class Config extends PureComponent<Props, State> {
   render() {
     return (
       <FieldSet>
-        <h2>{ApplicationName}</h2>
+        <h2>{Application.name}</h2>
         <p>The Abc Application, is a plugin for Grafana that...</p>
       </FieldSet>
     );

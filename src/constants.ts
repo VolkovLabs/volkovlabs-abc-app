@@ -1,6 +1,8 @@
 /**
  * Application
  */
-export const ApplicationRoot = '/a/volkovlabs-abc-app';
-export const ApplicationName = 'Abc Application';
-export const ApplicationSubTitle = 'Template to create a new Grafana application plugin';
+export const Application = {
+  root: '/a/volkovlabs-abc-app',
+  name: 'Abc Application',
+  subTitle: 'Template to create a new Grafana application plugin',
+};
