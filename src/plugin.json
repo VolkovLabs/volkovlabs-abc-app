@@ -33,7 +33,7 @@
       "icon": "home-alt",
       "name": "Home",
       "path": "/a/volkovlabs-abc-app/",
-      "role": "Admin",
+      "role": "Viewer",
       "type": "page"
     }
   ],

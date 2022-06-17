@@ -3,7 +3,7 @@ import React from 'react';
 import { setImmediate } from 'timers';
 import { AppPluginMeta, PluginType } from '@grafana/data';
 import { Alert } from '@grafana/ui';
-import { ApplicationName, ApplicationSubTitle } from '../../constants';
+import { Application } from '../../constants';
 import { RootPage } from './RootPage';
 
 /**
@@ -71,9 +71,9 @@ describe('RootPage', () => {
       );
       wrapper.instance().updateNav();
       const node = {
-        text: ApplicationName,
+        text: Application.name,
         img: meta.info.logos.large,
-        subTitle: ApplicationSubTitle,
+        subTitle: Application.subTitle,
         url: path,
         children: [
           {

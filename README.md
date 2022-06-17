@@ -47,6 +47,7 @@ yarn run start
 - Provides unit test configuration.
 - Based on the latest version of Grafana.
 - Includes GitHub Actions for CI and Release.
+- Includes secure configuration for NGINX reverse proxy.
 
 ## Feedback
 
