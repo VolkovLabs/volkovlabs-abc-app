@@ -5,6 +5,7 @@
 ### Features / Enhancements
 
 - Rebuild using 9.1.6 (#15)
+- Add Compatibility Check Workflow (#16)
 
 ## 2.0.0 (2022-06-16)
 
