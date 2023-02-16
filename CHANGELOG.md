@@ -6,6 +6,7 @@
 
 - Update Workflows (#17)
 - Rebuild using 9.3.6 (#18)
+- Add Application screenshot (#19)
 
 ## 2.1.0 (2022-09-22)
 
