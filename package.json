@@ -1,6 +1,6 @@
 {
   "author": "Volkov Labs",
-  "description": "Template for a new Grafana application plugin",
+  "description": "Template to create a new Grafana application plugin",
   "devDependencies": {
     "@grafana/data": "9.1.6",
     "@grafana/runtime": "9.1.6",
@@ -14,11 +14,12 @@
   "engines": {
     "node": ">=16"
   },
+  "license": "Apache-2.0",
   "name": "volkovlabs-abc-app",
   "scripts": {
     "build": "grafana-toolkit plugin:build --coverage",
     "dev": "grafana-toolkit plugin:dev",
-    "format": "prettier --write \"**\"",
+    "levitate": "npx @grafana/levitate@latest is-compatible --path src/module.ts --target @grafana/data,@grafana/runtime,@grafana/ui",
     "sign": "grafana-toolkit plugin:sign --rootUrls http://localhost:3000/",
     "start": "docker-compose pull && docker-compose up",
     "stop": "docker-compose down",
@@ -26,5 +27,5 @@
     "upgrade": "yarn upgrade --latest",
     "watch": "grafana-toolkit plugin:dev --watch"
   },
-  "version": "2.1.0"
+  "version": "2.2.0"
 }
