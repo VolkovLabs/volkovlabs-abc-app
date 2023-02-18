@@ -7,6 +7,8 @@
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-app)
 [![CodeQL](https://github.com/VolkovLabs/volkovlabs-abc-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-abc-app/actions/workflows/codeql-analysis.yml)
 
+## Introduction
+
 The Abc Application is a template we created to streamline our development process and gladly share it with the Grafana community.
 
 We created many Grafana applications to this moment. To make the creation process efficient, starting with a well-constructed template is always easier.
