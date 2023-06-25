@@ -1,10 +1,15 @@
 # Change Log
 
-## 2.3.0 (IN PROGRESS)
+## 3.0.0 (2023-06-25)
 
 ### Features / Enhancements
 
 - Update CI and Release Workflows to use setup-node cache (#20)
+- Update unit tests with testing-library/react (#21)
+- Update to Grafana 10.0.1 (#22)
+- Migrate to Plugin Tools 1.5.2 (#22)
+- Update to Node 18 and npm (#22)
+- Remove Grafana 9 support (#22)
 
 ## 2.2.0 (2023-02-16)
 
