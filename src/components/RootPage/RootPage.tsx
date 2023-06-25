@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { AppRootProps, NavModelItem } from '@grafana/data';
 import { Alert } from '@grafana/ui';
-import { Application } from '../../constants';
+import { Application, TestIds } from '../../constants';
 import { GlobalSettings } from '../../types';
 
 /**
@@ -10,53 +10,18 @@ import { GlobalSettings } from '../../types';
 interface Props extends AppRootProps<GlobalSettings> {}
 
 /**
- * State
- */
-interface State {
-  /**
-   * Loading
-   *
-   * @type {boolean}
-   */
-  loading: boolean;
-}
-
-/**
  * Root Page
  */
-export class RootPage extends PureComponent<Props, State> {
+export const RootPage: React.FC<Props> = ({ path, onNavChanged, meta }) => {
   /**
-   * Constructor
-   *
-   * @param props {Props} Properties
+   * State
    */
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      loading: true,
-    };
-  }
+  const [loading, setLoading] = useState(true);
 
   /**
-   * Mount
+   * Update Navigation
    */
-  async componentDidMount() {
-    this.updateNav();
-
-    /**
-     * Set state
-     */
-    this.setState({
-      loading: false,
-    });
-  }
-
-  /**
-   * Navigation
-   */
-  updateNav() {
-    const { path, onNavChanged, meta } = this.props;
+  const updateNav = useCallback(() => {
     const tabs: NavModelItem[] = [];
 
     /**
@@ -88,25 +53,29 @@ export class RootPage extends PureComponent<Props, State> {
       node: node,
       main: node,
     });
-  }
+  }, [meta.info.logos.large, onNavChanged, path]);
 
   /**
-   * Render
+   * Update nav on mount
    */
-  render() {
-    const { loading } = this.state;
+  useEffect(() => {
+    updateNav();
 
     /**
-     * Loading
+     * Set loading
      */
-    if (loading) {
-      return (
-        <Alert title="Loading..." severity="info">
-          <p>Loading...</p>
-        </Alert>
-      );
-    }
+    setLoading(false);
 
-    return <div>Loaded and ready to go!</div>;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (loading) {
+    return (
+      <Alert title="Loading..." severity="info" data-testid={TestIds.rootPage.loadingIndicator}>
+        <p>Loading...</p>
+      </Alert>
+    );
   }
-}
+
+  return <div data-testid={TestIds.rootPage.content}>Loaded and ready to go!</div>;
+};

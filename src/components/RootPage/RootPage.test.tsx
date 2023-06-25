@@ -1,9 +1,7 @@
-import { shallow } from 'enzyme';
 import React from 'react';
-import { setImmediate } from 'timers';
 import { AppPluginMeta, PluginType } from '@grafana/data';
-import { Alert } from '@grafana/ui';
-import { Application } from '../../constants';
+import { act, render, screen } from '@testing-library/react';
+import { Application, TestIds } from '../../constants';
 import { RootPage } from './RootPage';
 
 /**
@@ -51,25 +49,11 @@ describe('RootPage', () => {
    * Mounting
    */
   describe('Mounting', () => {
-    it('Should update navigation', () => {
-      const wrapper = shallow<RootPage>(
-        <RootPage basename="" meta={meta} path={path} query={null as any} onNavChanged={onNavChangedMock} />
+    it('Should update navigation', async () => {
+      await act(() =>
+        render(<RootPage basename="" meta={meta} path={path} query={null as any} onNavChanged={onNavChangedMock} />)
       );
-      const testedMethod = jest.spyOn(wrapper.instance(), 'updateNav');
-      wrapper.instance().componentDidMount();
-      expect(testedMethod).toHaveBeenCalledTimes(1);
-    });
-  });
 
-  /**
-   * updateNav
-   */
-  describe('updateNav', () => {
-    it('Should call onNavChanged prop', () => {
-      const wrapper = shallow<RootPage>(
-        <RootPage basename="" meta={meta} path={path} query={null as any} onNavChanged={onNavChangedMock} />
-      );
-      wrapper.instance().updateNav();
       const node = {
         text: Application.name,
         img: meta.info.logos.large,
@@ -96,19 +80,13 @@ describe('RootPage', () => {
    * Rendering
    */
   describe('rendering', () => {
-    it('Should show message if loading=true', (done) => {
-      const wrapper = shallow<RootPage>(
-        <RootPage basename="" meta={meta} path={path} query={null as any} onNavChanged={onNavChangedMock} />
+    it('Should render content only after nav changed', async () => {
+      await act(() =>
+        render(<RootPage basename="" meta={meta} path={path} query={null as any} onNavChanged={onNavChangedMock} />)
       );
-      wrapper.instance().componentDidMount();
 
-      setImmediate(() => {
-        const loadingMessageComponent = wrapper.findWhere(
-          (node) => node.is(Alert) && node.prop('title') === 'Loading...'
-        );
-        expect(loadingMessageComponent.exists()).not.toBeTruthy();
-        done();
-      });
+      expect(screen.queryByTestId(TestIds.rootPage.loadingIndicator)).not.toBeInTheDocument();
+      expect(screen.getByTestId(TestIds.rootPage.content)).toBeInTheDocument();
     });
   });
 

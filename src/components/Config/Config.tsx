@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { useCallback } from 'react';
 import { AppPluginMeta, PluginConfigPageProps } from '@grafana/data';
-import { BackendSrv, getBackendSrv } from '@grafana/runtime';
-import { FieldSet } from '@grafana/ui';
-import { Application } from '../../constants';
+import { getBackendSrv } from '@grafana/runtime';
+import { FieldSet, Button } from '@grafana/ui';
+import { Application, TestIds } from '../../constants';
 import { GlobalSettings } from '../../types';
 
 /**
@@ -11,37 +11,42 @@ import { GlobalSettings } from '../../types';
 interface Props extends PluginConfigPageProps<AppPluginMeta<GlobalSettings>> {}
 
 /**
- * State
- */
-interface State {}
-
-/**
  * Config component
  */
-export class Config extends PureComponent<Props, State> {
+export const Config: React.FC<Props> = ({ plugin }) => {
   /**
    * Service to communicate via http(s) to a remote backend such as the Grafana backend, a datasource etc.
    */
-  private backendSrv: BackendSrv = getBackendSrv();
+  const backendSrv = getBackendSrv();
 
   /**
    * Plugin Settings
    *
    * @param settings Plugin Settings
    */
-  updatePluginSettings = (settings: { enabled: boolean; jsonData: unknown; pinned: boolean }): Promise<undefined> => {
-    return this.backendSrv.post(`api/plugins/${this.props.plugin.meta.id}/settings`, settings);
-  };
+  const updatePluginSettings = useCallback(
+    (settings: { enabled: boolean; jsonData: unknown; pinned: boolean }): Promise<undefined> => {
+      return backendSrv.post(`api/plugins/${plugin.meta.id}/settings`, settings);
+    },
+    [backendSrv, plugin.meta.id]
+  );
 
-  /**
-   * Page Render
-   */
-  render() {
-    return (
-      <FieldSet>
-        <h2>{Application.name}</h2>
-        <p>The Abc Application, is a plugin for Grafana that...</p>
-      </FieldSet>
-    );
-  }
-}
+  return (
+    <FieldSet data-testid={TestIds.config.root}>
+      <h2>{Application.name}</h2>
+      <p>The Abc Application, is a plugin for Grafana that...</p>
+      <Button
+        onClick={() =>
+          updatePluginSettings({
+            enabled: true,
+            jsonData: {},
+            pinned: true,
+          })
+        }
+        data-testid={TestIds.config.buttonUpdate}
+      >
+        Update Settings
+      </Button>
+    </FieldSet>
+  );
+};
