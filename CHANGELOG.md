@@ -10,6 +10,7 @@
 - Migrate to Plugin Tools 1.5.2 (#22)
 - Update to Node 18 and npm (#22)
 - Remove Grafana 9 support (#22)
+- Add Application Router (#23)
 
 ## 2.2.0 (2023-02-16)
 
@@ -17,7 +18,7 @@
 
 - Update Workflows (#17)
 - Rebuild using 9.3.6 (#18)
-- Add Application screenshot (#19)
+- Add App screenshot (#19)
 
 ## 2.1.0 (2022-09-22)
 

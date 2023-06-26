@@ -2,13 +2,13 @@ import React, { useCallback } from 'react';
 import { AppPluginMeta, PluginConfigPageProps } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { FieldSet, Button } from '@grafana/ui';
-import { Application, TestIds } from '../../constants';
-import { GlobalSettings } from '../../types';
+import { AppInfo, TestIds } from '../../constants';
+import { AppSettings } from '../../types';
 
 /**
  * Page Properties
  */
-interface Props extends PluginConfigPageProps<AppPluginMeta<GlobalSettings>> {}
+interface Props extends PluginConfigPageProps<AppPluginMeta<AppSettings>> {}
 
 /**
  * Config component
@@ -33,8 +33,8 @@ export const Config: React.FC<Props> = ({ plugin }) => {
 
   return (
     <FieldSet data-testid={TestIds.config.root}>
-      <h2>{Application.name}</h2>
-      <p>The Abc Application, is a plugin for Grafana that...</p>
+      <h2>{AppInfo.name}</h2>
+      <p>The Abc App, is a plugin for Grafana that...</p>
       <Button
         onClick={() =>
           updatePluginSettings({
