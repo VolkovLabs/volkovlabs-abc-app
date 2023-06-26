@@ -1,2 +1,3 @@
+export * from './App';
 export * from './Config';
-export * from './RootPage';
+export * from './Home';

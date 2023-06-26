@@ -1,8 +1,14 @@
 /**
- * Application
+ * App Information
  */
-export const Application = {
+export const AppInfo = {
+  name: 'Abc App',
   root: '/a/volkovlabs-abc-app',
-  name: 'Abc Application',
-  subTitle: 'Template to create a new Grafana application plugin',
+};
+
+/**
+ * Routes
+ */
+export const Routes = {
+  home: `${AppInfo.root}`,
 };

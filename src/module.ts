@@ -1,12 +1,13 @@
 import { AppPlugin } from '@grafana/data';
-import { Config, RootPage } from './components';
-import { GlobalSettings } from './types';
+import { Config, App } from './components';
+import { AppSettings } from './types';
 
 /**
  * Application Plugin
  */
-export const plugin = new AppPlugin<GlobalSettings>().setRootPage(RootPage).addConfigPage({
+export const plugin = new AppPlugin<AppSettings>().setRootPage(App).addConfigPage({
   title: 'Config',
+  icon: 'cog',
   body: Config,
   id: 'config',
 });

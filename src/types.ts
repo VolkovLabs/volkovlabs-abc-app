@@ -1,4 +1,4 @@
 /**
- * Global Settings
+ * App Settings
  */
-export interface GlobalSettings {}
+export interface AppSettings {}
