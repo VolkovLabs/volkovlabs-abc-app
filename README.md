@@ -4,6 +4,7 @@
 
 ![Grafana 10](https://img.shields.io/badge/Grafana-10.0.0-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-abc-app/workflows/CI/badge.svg)
+![E2E](https://github.com/volkovlabs/volkovlabs-abc-app/workflows/E2E/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-app)
 [![CodeQL](https://github.com/VolkovLabs/volkovlabs-abc-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-abc-app/actions/workflows/codeql-analysis.yml)
 
@@ -48,7 +49,7 @@ npm run start
 
 ## Highlights
 
-- Use `docker-compose` to start the development environment with a provisioned App plugin.
+- Use `docker-compose` to start the development environment with a provisioned dashboard, App plugin.
 - Provides unit and E2E test configuration.
 - Based on the latest version of Grafana and Grafana Tools.
 - Includes GitHub Actions for CI, E2E, and Release.
