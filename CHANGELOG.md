@@ -11,6 +11,7 @@
 - Update to Node 18 and npm (#22)
 - Remove Grafana 9 support (#22)
 - Add Application Router (#23)
+- Add E2E Cypress testing (#24)
 
 ## 2.2.0 (2023-02-16)
 
