@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { AppPluginMeta, PluginConfigPageProps } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
-import { FieldSet, Button } from '@grafana/ui';
+import { Button, FieldSet } from '@grafana/ui';
 import { AppInfo, TestIds } from '../../constants';
 import { AppSettings } from '../../types';
 
