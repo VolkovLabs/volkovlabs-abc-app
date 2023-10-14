@@ -1,9 +1,9 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { AppPluginMeta, PluginType } from '@grafana/data';
 import { render, screen } from '@testing-library/react';
 import { AppInfo, TestIds } from '../../constants';
 import { App } from './App';
-import { BrowserRouter } from 'react-router-dom';
 
 /**
  * Meta
