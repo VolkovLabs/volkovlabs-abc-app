@@ -1,10 +1,12 @@
 # Change Log
 
-## 3.1.0 (IN PROGRESS)
+## 3.1.0 (2023-10-14)
 
 ### Features / Enhancements
 
 - Update ESLint configuration (#26)
+- Update to Plugin Tools 2.1.1 (#27)
+- Use Grafana Access Policy to sign plugin (#27)
 
 ## 3.0.0 (2023-06-25)
 
