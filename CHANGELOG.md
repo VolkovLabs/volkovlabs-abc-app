@@ -7,6 +7,7 @@
 - Update ESLint configuration (#26)
 - Update to Plugin Tools 2.1.1 (#27)
 - Use Grafana Access Policy to sign plugin (#27)
+- Update to Grafana 10.1.5 (#28)
 
 ## 3.0.0 (2023-06-25)
 

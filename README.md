@@ -2,7 +2,7 @@
 
 ![App](https://github.com/VolkovLabs/volkovlabs-abc-app/raw/main/src/img/app.png)
 
-![Grafana 10](https://img.shields.io/badge/Grafana-10.0.0-orange)
+![Grafana 10](https://img.shields.io/badge/Grafana-10.1-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-abc-app/workflows/CI/badge.svg)
 ![E2E](https://github.com/volkovlabs/volkovlabs-abc-app/workflows/E2E/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-app)
@@ -16,9 +16,9 @@ Generate an App template with [https://github.com/VolkovLabs/volkovlabs-abc-app/
 
 ## Requirements
 
-- **Grafana 9**, and **Grafana 10** are required for major version 3.
-- **Grafana 8.5+** and **Grafana 9** are required for major version 2.
-- **Grafana 8** is required for major version 1.
+- Version 3.X requires Grafana 9 or Grafana 10.
+- Version 2.X requires Grafana 8.5 or Grafana 9.
+- Version 1.X requires Grafana 8.
 
 ## Getting Started
 
@@ -37,7 +37,7 @@ npm run build
 3. Sign the plugins if required
 
 ```bash
-export GRAFANA_API_KEY=erfdfsgfs==
+export GRAFANA_ACCESS_POLICY_TOKEN=token==
 npm run sign
 ```
 
@@ -49,7 +49,7 @@ npm run start
 
 ## Highlights
 
-- Use `docker-compose` to start the development environment with a provisioned dashboard, App plugin.
+- Use `docker-compose` to start the development environment with a provisioned dashboard and App plugin.
 - Provides unit and E2E test configuration.
 - Based on the latest version of Grafana and Grafana Tools.
 - Includes GitHub Actions for CI, E2E, and Release.
@@ -57,8 +57,8 @@ npm run start
 
 ## Support
 
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
-- Premium tier support for the development plugins is available via [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Premium support for the development plugins is available via [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
 
 ## License
 
