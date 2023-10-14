@@ -1,7 +1,7 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { AppRootProps } from '@grafana/data';
 import { AppSettings } from '../../types';
-import { Route, Switch } from 'react-router-dom';
 import { Home } from '../Home';
 
 /**
