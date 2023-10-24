@@ -1,3 +1,10 @@
+import { SupportedLanguage } from '../types';
+
+/**
+ * Default Language
+ */
+export const DefaultLanguage: SupportedLanguage = 'en';
+
 /**
  * App Information
  */
