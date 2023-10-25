@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { AppPluginMeta, PluginConfigPageProps } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { Button, FieldSet } from '@grafana/ui';
+import { useTranslation } from 'react-i18next';
 import { AppInfo, TestIds } from '../../constants';
 import { AppSettings } from '../../types';
 
@@ -14,6 +15,11 @@ interface Props extends PluginConfigPageProps<AppPluginMeta<AppSettings>> {}
  * Config component
  */
 export const Config: React.FC<Props> = ({ plugin }) => {
+  /**
+   * Translation
+   */
+  const { t } = useTranslation();
+
   /**
    * Service to communicate via http(s) to a remote backend such as the Grafana backend, a datasource etc.
    */
@@ -34,7 +40,7 @@ export const Config: React.FC<Props> = ({ plugin }) => {
   return (
     <FieldSet data-testid={TestIds.config.root}>
       <h2>{AppInfo.name}</h2>
-      <p>The Abc App, is a plugin for Grafana that...</p>
+      <p>{t('config.description')}</p>
       <Button
         onClick={() =>
           updatePluginSettings({
@@ -45,7 +51,7 @@ export const Config: React.FC<Props> = ({ plugin }) => {
         }
         data-testid={TestIds.config.buttonUpdate}
       >
-        Update Settings
+        {t('config.updateButton')}
       </Button>
     </FieldSet>
   );

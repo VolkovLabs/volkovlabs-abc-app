@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Add internationalization i18n (#29)
+
 ## 3.1.0 (2023-10-14)
 
 ### Features / Enhancements

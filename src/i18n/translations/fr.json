@@ -1,0 +1,12 @@
+{
+  "config": {
+    "description": "L'App Abc, est un plugin pour Grafana qui...",
+    "updateButton": "Mettre à jour les paramètres"
+  },
+  "configPages": {
+    "config": "Configuration"
+  },
+  "home": {
+    "greeting": "Bonjour le monde!"
+  }
+}

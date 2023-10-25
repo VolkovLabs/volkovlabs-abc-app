@@ -38,7 +38,7 @@ describe('Config', () => {
         () =>
           ({
             post: postRequestMock,
-          } as any)
+          }) as any
       );
 
       render(<Config plugin={plugin} query={null as any} />);

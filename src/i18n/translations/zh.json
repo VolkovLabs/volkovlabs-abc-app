@@ -1,0 +1,12 @@
+{
+  "config": {
+    "description": "Abc 应用程序是 Grafana 的一个插件，...",
+    "updateButton": "更新设置"
+  },
+  "configPages": {
+    "config": "配置"
+  },
+  "home": {
+    "greeting": "你好世界！"
+  }
+}
